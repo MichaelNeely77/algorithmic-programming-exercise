@@ -26,3 +26,6 @@ verify(result)
 
 result = binary_search(numbers, 3)
 verify(result)
+
+
+# Left off at 1:28:05 
