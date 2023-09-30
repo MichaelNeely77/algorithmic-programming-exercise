@@ -30,6 +30,8 @@ class LinkedList:
 
         while current:
             count += 1
-            current - current.next_node
+            current = current.next_node
 
         return count
+    
+    # Ends at 2:36:29
