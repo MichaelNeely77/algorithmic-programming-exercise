@@ -78,7 +78,7 @@ class LinkedList:
             current = self.head
 
             while position > 1:
-                current = node.next_node
+                current = new.next_node # Error in this line 
                 position -= 1
             
             prev_node = current
@@ -87,6 +87,28 @@ class LinkedList:
             prev_node.next_node = new
             new.next_node = next_node
 
+    def remove(self, key):
+        """
+        Removes Node containing data that matches the key
+        Returns the node of None if key doesn't exist
+        Takes O(n)
+        """
+        current = self.head
+        previous = None
+        found = False
+
+        while current and not found:
+            if current.data == key and current is self.head:
+                found = True
+                self.head = current.next_node
+            elif current.data == key:
+                found = True
+                previous.next_node = current.next_node
+            else:
+                previous = current
+                current = current.next_node
+
+        return current
 
     def __repr__(self):
         """
@@ -110,5 +132,5 @@ class LinkedList:
     
     # Search - Ended at 2:48:35
 
-    # Stoped at 2:55:36 Adding removal function
+
 
