@@ -19,12 +19,12 @@ def merge_sort(list):
 
 def split(list):
     """
-    Divide teh unsorted list at midoint into sublists
+    Divide the unsorted list at midoint into sublists
     Returns two sublists - left and right
     """
 
     mid = len(list)//2
-    left = left[:mid]
+    left = list[:mid]
     right = list[mid:]
 
     return left, right
@@ -38,7 +38,7 @@ def merge(left, right):
     j = 0
 
     while i < len(left) and j < len(right):
-        if left[1] < right[j]:
+        if left[i] < right[j]:
             l.append(left[i])
             i+=1
         else:
@@ -49,9 +49,17 @@ def merge(left, right):
         l.append(left[i])
         i+=1
 
-    while j < lenf(right):
+    while j < len(right):
         l.append(right[j])
         j+=1
 
+
         # stopped at 3:21:37
+
+    return l
+
+alist = [56, 2, 75, 89, 12, 45, 73, 17, 23, 46]
+l = merge_sort(alist)
+print(l)
+
         
