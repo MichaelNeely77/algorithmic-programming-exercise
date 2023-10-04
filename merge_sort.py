@@ -21,6 +21,8 @@ def split(list):
     """
     Divide the unsorted list at midoint into sublists
     Returns two sublists - left and right
+
+    Takes overall O(log n) - logarithmic time
     """
 
     mid = len(list)//2
@@ -58,8 +60,21 @@ def merge(left, right):
 
     return l
 
+# alist = [56, 2, 75, 89, 12, 45, 73, 17, 23, 46]
+# l = merge_sort(alist)
+# print(l)
+
+def verify_sorted(list):
+    n = len(list)
+
+    if n == 0 or n == 1:
+        return True
+    
+    return list[0] < list[1] and verify_sorted(list[1:])
+
 alist = [56, 2, 75, 89, 12, 45, 73, 17, 23, 46]
 l = merge_sort(alist)
-print(l)
+print(verify_sorted(alist))
+print(verify_sorted(l))
 
         
