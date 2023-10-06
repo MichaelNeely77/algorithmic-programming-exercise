@@ -68,7 +68,7 @@ def merge(left, right):
     # Add the node from right to merged linked list
         if left_head is None:
             current.next_node = right_head
-            # Call next of right to saet condition to False
+            # Call next of right to set loop condition to False
             right_head = right_head.next_node
             # if the head node of right is None, we're past the tail
             # Add the tail node from left to merged linked list
@@ -82,7 +82,7 @@ def merge(left, right):
 
             left_data = left_head.data
             right_data = right_head.data
-            #If data o left is < data on right, set current to left_node
+            #If data on left is < data on right, set current to left_node
             if left_data < right_data:
                 current.next_node = left_head
                 #Move left head to next node
@@ -92,8 +92,10 @@ def merge(left, right):
                current.next_node = right_head
                #Move right head to next node
                right_head = right_head.next_node
+            #    print(right_head)
         # Move current to next node
         current = current.next_node
+        
 
         # Discard the fake head and set first merged node as head
     head = merged.head.next_node
@@ -105,11 +107,12 @@ l = LinkedList()
 l.add(10)
 l.add(5)
 l.add(2)
-l.add(17)
+l.add(11)
 l.add(44)
 l.add(198)
 
 print(l)
 sorted_linked_list = merge_sort(l)
 print(sorted_linked_list)
+
 
