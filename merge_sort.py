@@ -80,6 +80,6 @@ alist = [56, 2, 75, 89, 12, 45, 73, 17, 23, 46]
 l = merge_sort(alist)
 print(verify_sorted(alist))
 print(verify_sorted(l))
-
+print(l)
 
 # Stopped at 3:35:42
