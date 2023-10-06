@@ -121,6 +121,8 @@ class LinkedList:
                 current = current.next_node
                 position +=1
 
+            return current
+
     def __repr__(self):
         """
         Return a string representation of the list

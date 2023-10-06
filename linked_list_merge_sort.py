@@ -24,22 +24,22 @@ def split(linked_list):
    Divide the unsorted list at midpoint into sublists
    """
    if linked_list == None or linked_list.head == None:
-        left_half = linked_list
-        right_half = None
+      left_half = linked_list
+      right_half = None
 
-        return left_half, right_half
+      return left_half, right_half
    else:
-        size = linked_list.size()
-        mid = size//2
+      size = linked_list.size()
+      mid = size//2
 
-        mid_node = linked_list.node_at_index(mid-1)
+      mid_node = linked_list.node_at_index(mid-1)
 
-        left_half = linked_list
-        right_half = LinkedList()
-        right_half.head = mid_node.next_node
-        mid_node.next_node = None
+      left_half = linked_list
+      right_half = LinkedList()
+      right_half.head = mid_node.next_node
+      mid_node.next_node = None
 
-        return left_half, right_half
+      return left_half, right_half
    
 def merge(left, right):
     """
@@ -95,4 +95,21 @@ def merge(left, right):
         # Move current to next node
         current = current.next_node
 
-        #Stopped at 4:00:08
+        # Discard the fake head and set first merged node as head
+    head = merged.head.next_node
+    merged.head = head
+
+    return merged
+    
+l = LinkedList()
+l.add(10)
+l.add(5)
+l.add(2)
+l.add(17)
+l.add(44)
+l.add(198)
+
+print(l)
+sorted_linked_list = merge_sort(l)
+print(sorted_linked_list)
+
